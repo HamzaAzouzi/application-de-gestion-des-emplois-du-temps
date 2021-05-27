@@ -7,9 +7,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
-  <link rel="stylesheet" href="style.css">
-  
-  <title>Document</title>
+  <link rel="stylesheet" href="../assets/css/styles.css">  
+  <title>sign up</title>
 </head>
 
 <body>
@@ -22,29 +21,43 @@
       </div>
       <div class="col d-flex align-items-center p-4">
 
-        <form class=" col d-flex   align-items-center flex-column">
+        <form action="http://localhost/brief5/user/up" class=" col d-flex   align-items-center flex-column" method="POST">
           <div class="mb-3">
+
             <label for="exampleInputEmail1" class="form-label">Username</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <input name="username" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
            
           </div>
           <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label">Email Address</label>
-            <input type="password" class="form-control" id="exampleInputPassword1">
+            <input  name="email" type="email" class="form-control" id="exampleInputPassword1">
           </div>
+          
+          <div class="form-group mb-2">
+
+                <label for="exampleInputEmail1" class="mb-3">Matiere</label>
+
+                <select class="form-control " name="id_matiere" id="">
+                    <?php foreach ($matieres as  $matiere) { ?>
+                        <option value="<?php echo $matiere['id'] ?>"> <?php echo $matiere['name'] ?></option>
+                    <?php } ?>
+                </select>
+
+
+            </div>
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Create password</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <input   name="password" type="password" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
            
           </div>
           <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label">Confirm Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1">
+            <input  name="confirm" type="password" class="form-control" id="exampleInputPassword1">
           </div>
        
-          <button type="submit" class="btn btn-primary">Sign up</button> <br> 
+          <button  type="submit" class="btn btn-primary">Sign up</button> <br> 
 
-          Don't have an accent ? <a href="#" class="">Sign in</a>
+          Don't have an accent ? <a href="http://localhost/brief5/user/login" class="">Sign in</a>
           
         </form>
 
